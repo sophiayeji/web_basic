@@ -187,13 +187,17 @@
 		- form의 메서드 전송방식이 반드시 post이어야 하며  enctype="multipart/form-data" 속성을 반드시 지정해야 한다.
 		   
 	 -->
-		 
-	<h3>password type</h3>
-	<form>
-	<p><input type = "submit"></p>		
-	</form>	
+	 
+	 <h3>file type</h3>
+	<form method = "post" enctype = "multipart/form-data">
+		<p>첨부파일1: <input type ="file" name = "f1"></p>
+		<p>첨부파일2: <input type ="file" name = "f2"></p>
+		<p><input type="submit"></p>
+	</form>
+	
 	<br><hr><br>
-
+		 
+	
 
 	
 	<!-- 
@@ -204,6 +208,16 @@
 		- hidden 요소의 name과 value값이 서버로 전달된다.
 	 
 	 -->
+	 <h3>hidden type</h3>
+		<form>
+		<input type = "hidden" name = "isPC" value= "true">
+		<input type="hidden" name ="iTime" value ="2023-04-10">
+		<input type="hidden" name ="locationCd" value ="10521">	 
+		<p>아이디: <input type = "text" name ="id"></p>
+		<p><input type="submit"></p>
+	</form>	
+	<br><hr><br>
+	
 	
 	
 	<!-- 
@@ -212,10 +226,17 @@
 		
 		- 사용자로 하여금 날짜를 선택하게 한다.
 		- min,max속성을 사용해 특정기간에서만 날짜를 선택하도록 할 수 있다.
-		- 익스플로어 및 특정 브라우저는 아직 지원이 되지 않는다.
+		- String 타입으로 데이터가 전송된다.
 		
 	 -->
-
+	<h3>date type</h3>
+		<form>
+		<p>예약일1 : <input type ="date" name ="date1"> </p>
+		<p>예약일2 : <input type ="date" name = "date2" value="2023-04-10"> </p>
+		<p>예약일3 : <input type ="date" name = "date3" min ="2023-04-10" max ="2023-04-17"> </p>
+		<p><input type="submit"></p>
+	</form>	
+	<br><hr><br>
 	 
 	<!-- 
 	
@@ -231,6 +252,14 @@
 	 	min , max : 최소값, 최대값
 	 	
 	 -->
+	 <h3>number type</h3>
+		<form>
+		<p>주문수량 : <input type = "number" name = "OrderQty"></p>
+		<p>사이즈 선택:<input type = "number" name = "size1" value= "260" step ="5"> </p>		
+		<p>사이즈 선택:<input type = "number" name = "size2" value= "220" step ="5" min ="200" max ="250"> </p>		
+		<p><input type="submit"></p>
+	</form>	
+	<br><hr><br>
 			 
 	
 	<!-- 
@@ -241,6 +270,12 @@
 	    - 유효값 확인은 submit을 클릭할 경우에 진행된다.
 	 	
 	  -->
+	  <h3>email type</h3>
+		<form>
+		<p>이메일: <input type ="email" name = "email"> </p>
+		<p><input type="submit"></p>
+	</form>	
+	<br><hr><br>
   
 
 </body>
