@@ -3,11 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="bootstrap.min.css" rel ="stylesheet" type ="text/css">
+<link href="bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<input type ="button" class="btn btn-primary" value ="로그인">
-	<input type ="button" class="btn btn-secondary" value ="회원가입">
-	<input type ="button" class="btn btn-success" value ="취소">
+
+	<input type="button" class="btn btn-primary" value="1"> 
+	<input type="button" class="btn btn-success" value="2"> 
+	<input type="button" class="btn btn-danger" value="3"> 
+
+	<hr>	
+	<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h4 class="card-title">월요일</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h4 class="card-title">화요일</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h4 class="card-title">Success card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h4 class="card-title">Danger card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h4 class="card-title">Warning card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h4 class="card-title">Info card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card bg-light mb-3" style="max-width: 10rem;">
+  <div class="card-header">bbb</div>
+  <div class="card-body">
+    <h4 class="card-title">aaa</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h4 class="card-title">Dark card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+	
+	<table class="table table-hover">
+	  <thead>
+	    <tr>
+	      <tr class="table-primary">
+	      <th scope="col">제목</th>
+	      <th scope="col">어쩌구</th>
+	      <th scope="col">저쩌구</th>
+	      <th scope="col">이러쿵</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	      <th scope="row">Active</th>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">Default</th>
+	      <td>헷</td>
+	      <td>이힛</td>
+	      <td>흐흐흐</td>
+	    </tr>
+	      <th scope="row">Primary</th>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	    </tr>
+	      <th scope="row">Secondary</th>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	    </tr>
+	      <th scope="row">Success</th>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	    </tr>
+	      <th scope="row">Danger</th>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	    </tr>
+	      <th scope="row">Warning</th>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	    </tr>
+	      <th scope="row">Info</th>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	    </tr>
+	      <th scope="row">Light</th>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	    </tr>
+	      <th scope="row">Dark</th>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	      <td>Column content</td>
+	    </tr>
+	  </tbody>
+	</table>
+<div class="form-group">
+  <fieldset disabled="">
+    <label class="form-label" for="disabledInput">Disabled input</label>
+    <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
+  </fieldset>
+</div>
+<div class="form-group">
+  <fieldset>
+    <label class="form-label" for="readOnlyInput">Readonly input</label>
+    <input class="form-control" id="readOnlyInput" type="text" placeholder="Readonly input here..." readonly="">
+  </fieldset>
+</div>
+<div class="form-group has-success">
+  <label class="form-label" for="inputValid">Valid input</label>
+  <input type="text" value="correct value" class="form-control is-valid" id="inputValid">
+  <div class="valid-feedback">Success! You've done it.</div>
+</div>
+<div class="form-group has-danger">
+  <label class="form-label" for="inputInvalid">Invalid input</label>
+  <input type="text" value="wrong value" class="form-control is-invalid" id="inputInvalid">
+  <div class="invalid-feedback">Sorry, that username's taken. Try another?</div>
+</div>
+<div class="form-group">
+  <label class="col-form-label col-form-label-lg" for="inputLarge">Large input</label>
+  <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" id="inputLarge">
+</div>
+<div class="form-group">
+  <label class="col-form-label" for="inputDefault">Default input</label>
+  <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
+</div>
+<div class="form-group">
+  <label class="col-form-label col-form-label-sm" for="inputSmall">Small input</label>
+  <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" id="inputSmall">
+</div>
+<div class="form-group">
+  <label class="form-label mt-4">Input addons</label>
+  <div class="form-group">
+    <div class="input-group mb-3">
+      <span class="input-group-text">$</span>
+      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+      <span class="input-group-text">.00</span>
+    </div>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+      <button class="btn btn-primary" type="button" id="button-addon2">Button</button>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="form-label mt-4">Floating labels</label>
+  <div class="form-floating mb-3">
+    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+    <label for="floatingInput">Email address</label>
+  </div>
+  <div class="form-floating">
+    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+    <label for="floatingPassword">Password</label>
+  </div>
+</div>	
 </body>
 </html>
+
+
