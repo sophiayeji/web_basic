@@ -1,0 +1,6 @@
+[vs code broswer동작 셋팅]
+
+extensions[테트리스모양 아이콘]클릭
+open in broswer 검색 > install
+expoloer[파일2개 아이콘]클릭
+alt + b 로 스크립트 실행
