@@ -3,6 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+
+	function printDeliveryPrice (method) {
+		
+		if	(method == "rocket") {
+			document.getElementById("deliveryPrice").innerHTML = "무료";		
+		}
+		else {
+			document.getElementById("deliveryPrice").innerHTML = "3.000원";
+		}		
+		
+	}
+
+</script>
 </head>
 <body>
 
@@ -13,10 +27,10 @@
 	
 	 -->
 
-	<input type="radio" name="deliveryMethod" value="rocket" checked > 로켓 배송 &emsp;
-	<input type="radio" name="deliveryMethod" value="nomal"> 일반 배송
+	<input type="radio" name="deliveryMethod" value="rocket" checked onchange ="printDeliveryPrice('rocket')" > 로켓 배송 &emsp;
+	<input type="radio" name="deliveryMethod" value="basic" onchange ="printDeliveryPrice('basic')"> 일반 배송
 
-	<h3>배송비 : <span id="deliveyrPrice">무료</span></h3>
+	<h3>배송비 : <span id="deliveryPrice">무료</span></h3>
 
 </body>
 </html>
