@@ -73,8 +73,8 @@ USE TEST_DB;
 				- 최대 255Byte 저장 가능
 				- 최대길이보다 작을경우 해당만큼의 데이터만 저장
 				
-                  실수  : DOUBLE
-		날짜  : DATE , DATETIME, TIMETAMP
+		실수  : DOUBLE
+		날짜  : DATE , DATETIME, TIMESTAMP
         
 	   EX)
 	   CREATE TABLE T_ADMIN_GOODS (
@@ -84,9 +84,11 @@ USE TEST_DB;
 	   );
 	   
 */
-CREATE TABLE MEMBER(
+
+
+CREATE TABLE TB_MEMBER(
 	
-    MEMBER_ID varchar(10),
+    MEMBER_ID varchar(10),			
     MEMBER_NM varchar(10),
     AGE       INT,
     HEIGHT 	  DOUBLE,
@@ -94,7 +96,6 @@ CREATE TABLE MEMBER(
     GENDER 	  char(1),
     INFO      varchar(50),
     REG_dT    TIMESTAMP
-
 
 );
 
@@ -127,7 +128,7 @@ CREATE TABLE MEMBER(
     EX) DESC TB_SHOPPING_GOODS;
     
 */ 
-
+DESC TB_MEMBER;
 
 
 
@@ -137,7 +138,7 @@ CREATE TABLE MEMBER(
 	- DROP TABLE TABLE_NAME;
 
 */
-
+DROP TABLE TB_MEMBER;
 	
 
 /*
@@ -147,7 +148,7 @@ CREATE TABLE MEMBER(
 		
 		EX) DROP DATABASE TEST_DB;
 */
-
+DROP database TEST_DB;
 
 
 /*	
