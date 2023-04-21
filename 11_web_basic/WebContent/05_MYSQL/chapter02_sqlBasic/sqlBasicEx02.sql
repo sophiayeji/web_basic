@@ -307,12 +307,33 @@ ORDER BY
  
 		
 # 가격이 가장 높은 3개의 상품의 전체 컬럼 조회
-     
-		
+SELECT
+		*
+from   
+		PRODUCT
+ORDER BY 
+		PRICE DESC
+LIMIT
+		3;
+        
 # 가장 최신에 등록된 3개의 상품의 전체 컬럼 조회
- 
+SELECT
+		*
+FROM 
+		PRODUCT
+ORDER BY
+		REG_DT DESC
+LIMIT
+		3;
  
 # 최신에 등록된 3개의 상품의 전체 컬럼 조회 (2번째 래코드 이후부터 조회)
-		
-		
+SELECT
+		*
+FROM 
+		PRODUCT
+ORDER BY
+		REG_DT DESC
+LIMIT
+		2, 3;
+
 DELETE FROM PRODUCT;	
