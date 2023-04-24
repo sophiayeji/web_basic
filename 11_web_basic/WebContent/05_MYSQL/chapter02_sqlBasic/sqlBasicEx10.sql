@@ -64,7 +64,40 @@ FROM
 WHERE
 		PRODUCT_CD= 'product1';
 
+
+# 한번에 주문량이 제일 많았던 주문량을 조회하기.
+SELECT
+		MAX(ORDER_GOODS_QTY)
+FROM
+		ORDER_TB;
+
+# 한번에 주문량이 제일 적었던 주문량을 조회하기.
+SELECT
+		MIN(ORDER_GOODS_QTY)
+FROM
+		ORDER_TB;
+
+# 'user1' , 'user2' , 'user3'의 주문건수 조회하기
+SELECT
+		COUNT(*)
+FROM
+		ORDER_TB
+WHERE
+		MEMBER_ID IN('user1' , 'user2' , 'user3');
+
+
+# 'product1' , 'product3' , 'product7'의 주문수량의 합을 조회하기
+SELECT
+		SUM(ORDER_GOODS_QTY)
+FROM
+		ORDER_TB
+WHERE
+		PRODUCT_CD IN('product1' , 'product3' , 'product7');
+
+
+
 /*
+
      
      #  GROUP BY
      
@@ -90,17 +123,52 @@ FROM
 GROUP BY 
 		MEMBER_ID;
 
-
-
 # 배송상태별로 개수를 조회하기
 SELECT
-		DELIVERY_STATUS,
+		DELIVERY_MESSAGE,
         COUNT(DELIVERY_STATUS)        
 FROM
 		ORDER_TB
 GROUP BY
-		DELIVERY_STATUS;	
+		DELIVERY_MESSAGE;	
+        
+# 'product4' , 'product5' , 'product6'이 아닌 상품별로 주문상품의 총 주문수량을 조회한뒤 가장 많이 주문된 상품 3개만 조회하기
+SELECT
+		PRODUCT_CD,
+		SUM(ORDER_GOODS_QTY) AS TOTAL_ORDER_GOODS_QTY
+FROM
+		ORDER_TB
+WHERE
+		PRODUCT_CD NOT IN('product4' , 'product5' , 'product6')
+GROUP BY
+		PRODUCT_CD
+ORDER BY
+		SUM(ORDER_GOODS_QTY) DESC        
+limit
+			3;
 
+# 연도별로 총 주문건수 , 주문수량 조회하기
+SELECT
+	SUBSTRING(ORDER_DT,1,4) AS YEAR,
+	COUNT(*)				AS TOTAL_ORDER_COUNT,
+    SUM(ORDER_GOODS_QTY)    AS TOTAL_ORDER_GOODS_QTY
+FROM
+	ORDER_TB
+GROUP BY
+	YEAR; #SUBSTRING(ORDER_DT,1,4);
+
+# 사용자별로 주문상품별로 주문상품의 총수량을 조회하기
+SELECT
+	MEMBER_ID,
+    PRODUCT_CD,
+	SUM(ORDER_GOODS_QTY)
+FROM 
+	ORDER_TB
+GROUP BY 
+	MEMBER_ID,
+    PRODUCT_CD
+ORDER BY
+	MEMBER_ID;
 
 
 # 배송완료가 아닌 배송상태별로 개수를 조회하기
@@ -119,7 +187,7 @@ GROUP BY
                         
 	 # HAVING
 		
-        - GROUP BY문법에 조건식을 추가할경우 HAVING을 사용한다.
+        - GROUP BY문법에 조건식을 추가할경우 HAVING을 사용한다.(GROUP BY에서 연속)
     
 		[ 형식 ]
             
@@ -149,4 +217,23 @@ HAVING
 
         
 
- # 2020년에 주문된 상품 중에서 사용자별로 주문상품별로 총 주문수량을 조회하되 총 주문수량이 5개 이상만 조회하기
+#2020년에 주문된 상품 중에서 사용자별로 주문상품별로 총 주문수량을 조회하되 총 주문수량이 5개 이상만 조회하기
+SELECT
+		MEMBER_ID,
+        PRODUCT_CD,
+        SUM(ORDER_GOODS_QTY)
+FROM
+		ORDER_TB
+WHERE
+		ORDER_DT BETWEEN '2020-01-01' AND '2020-12-31'
+GROUP BY
+		MEMBER_ID,
+		PRODUCT_CD
+HAVING 
+		SUM(ORDER_GOODS_QTY) >=5
+         
+ORDER BY 
+		MEMBER_ID,
+		PRODUCT_CD;
+
+
