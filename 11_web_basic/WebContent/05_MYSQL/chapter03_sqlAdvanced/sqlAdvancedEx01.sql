@@ -116,6 +116,33 @@ FROM
 		   RIGHT JOIN STUDENT S			# RIGHT OUTER JOIN STUDENT S
 				    ON C. SUBJECT_CD = S.SUBJECT_CD; 
 
+# (연습 예시) 2층에서 수업을 듣는 학생이름 , 과목이름 , 강의실위치를 조회하시오.	
+SELECT
+	S.STUDENT_NM AS STUDENT_NM,
+    C.SUBJECT_NM AS SUBJECT_NM,
+    C.LOCATION   AS LOCATION
+FROM 
+	CLASS C
+	INNER JOIN STUDENT S
+			ON C.SUBJECT_CD = S.SUBJECT_CD
+			#AND C.LOCATION IN ('201호','202호')
+WHERE
+	C.LOCATION IN ('201호', '202호');
+
+# (연습 예시) 각층별로 수업을 듣는 학생수를 조회하고 학생수가 많은 순서대로 조회하시오.
+SELECT
+	 SUBSTRING(C.LOCATION,1,1) AS LAYER,
+     COUNT(*)				   AS STUDENT_CNT
+FROM
+	CLASS C
+    INNER JOIN STUDENT S
+			ON C.SUBJECT_CD = S.SUBJECT_CD
+GROUP BY 
+		LAYER
+ORDER BY
+		STUDENT_CNT DESC;
+            
+
 
 			   	 
 
