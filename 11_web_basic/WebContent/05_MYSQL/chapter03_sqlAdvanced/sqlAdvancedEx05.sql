@@ -213,22 +213,42 @@ WHERE CAR_CD IN (SELECT TEMP.CAR_CD
 					
 # 2) 스칼라 서브쿼리 예시
 # 'k5' 차량의 렌트가격에서 전체 차량의 평균 렌트가격을 뺀 가격을 조회하기
+#SELECT	PRICE - AVG(PRICE) 
 
-
+SELECT  PRICE - (SELECT AVG(PRICE)
+				 FROM CAR) AS DIFF
+FROM	CAR
+WHERE   CAR_NM = 'k5';
+	
 # 전체 차량의 렌트가격에서 전체 차량의 평균 렌트의 가격을 뺀 가격을 조회하기
-
-		
-
+SELECT
+		CAR_NM								AS CAR_NM,
+        PRICE								AS PRICE,
+		(SELECT AVG(PRICE) FROM CAR) 		AS AVG,
+        PRICE -(SELECT AVG(PRICE) FROM CAR) AS DIFF
+FROM
+		CAR;
 
 
 # 3) 인라인 뷰 예시
 # 렌트카들의 평균 가격보다 높은 차량들의 정보를 조회하기.
-		
-
+SELECT T1.*
+FROM  (SELECT *
+	   FROM CAR
+       WHERE PRICE >= (SELECT AVG(PRICE)
+					  FROM CAR)) AS T1;
 # 렌트일이 5일이 넘어가는 차량정보 조회하기.
-
-					
+SELECT C.*
+FROM (SELECT *
+	  FROM CAR
+	  WHERE CAR_CD IN(SELECT CAR_CD
+					  FROM RENT
+					  WHERE RENT_PERIOD >=5)) AS C;					
 # 현대 자동차의 평균 렌트일 조회하기.
-
-
+SELECT ROUND(AVG (R.RENT_PERIOD))
+FROM (SELECT *
+	  FROM RENT
+	  WHERE CAR_CD IN (SELECT CAR_CD
+						FROM CAR
+						WHERE BRAND_NM = '현대')) AS R;
 
