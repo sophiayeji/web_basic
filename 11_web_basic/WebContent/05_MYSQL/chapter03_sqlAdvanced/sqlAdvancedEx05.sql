@@ -245,10 +245,10 @@ FROM (SELECT *
 					  FROM RENT
 					  WHERE RENT_PERIOD >=5)) AS C;					
 # 현대 자동차의 평균 렌트일 조회하기.
-SELECT ROUND(AVG (R.RENT_PERIOD))
-FROM (SELECT *
-	  FROM RENT
-	  WHERE CAR_CD IN (SELECT CAR_CD
-						FROM CAR
-						WHERE BRAND_NM = '현대')) AS R;
+SELECT ROUND(AVG(R.RENT_PERIOD))
+FROM   (SELECT *
+		FROM RENT 
+		WHERE CAR_CD IN (SELECT CAR_CD
+						 FROM CAR
+                         WHERE BRAND_NM = '현대')) AS R;
 
