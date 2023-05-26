@@ -9,6 +9,36 @@
 
 	$().ready(function(){
 		
+		$("#loginBtn").click(function(){
+		
+			var param = {
+				"id": $("[name='id']").val(),
+				"passwd" : $("[name='passwd']").val() 						
+			}
+			
+			
+			$.ajax({
+				url : "ajaxEx05",
+				type : "post",
+				data : param,
+				success : function(data) {
+					
+					if(data == "success") {
+						$("#msg").html("<span style='color:green;'>로그인되었습니다. </span>");
+						$("['name=id']").prop("disabled",true);
+						$("['name=passwd']").prop("disabled",true);
+					}
+					else{
+						$("#msg").html("<span style='color:red;'> 아이디와 비밀번호를 확인하세요 </span>");
+						$("['name=id']").prop("disabled",true);
+						$("['name=passwd']").prop("disabled",true);
+					}
+				}
+				
+			});
+			
+		});
+		
 	});
 	
 </script>

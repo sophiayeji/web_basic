@@ -24,8 +24,7 @@
 					console.log(status);
 					console.log(xhr)
 				
-				}
-			
+				}			
 				error: function(xhr,status,errorThrown){// 통신이 실패했을 경우 실행되는 콜백함수 
 					console.log(xhr);
 					console.log(status);

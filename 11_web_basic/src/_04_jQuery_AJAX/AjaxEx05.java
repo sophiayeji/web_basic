@@ -1,6 +1,7 @@
 package _04_jQuery_AJAX;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,7 +21,19 @@ public class AjaxEx05 extends HttpServlet {
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
+		request.setCharacterEncoding("utf-8");
+		
+		String id = request.getParameter("id");
+		String passwd = request.getParameter("passwd");
+		
+		String result = "fail";
+		if(id.equals("admin") && passwd.equals("admin")) {
+			result ="success";
+		}
+		
+		PrintWriter pw= response.getWriter();
+		pw.print(result);
 	}
 
 }

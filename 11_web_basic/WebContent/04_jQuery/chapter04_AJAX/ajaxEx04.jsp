@@ -9,7 +9,7 @@
 
 	$().ready(function(){
 		
-		$("duplicatedIdCheck").click(function(){
+		$("#duplicatedIdCheck").click(function(){
 			
 			$.ajax({
 				url : "ajaxEx04",
@@ -24,10 +24,8 @@
 			    	}
 			    
 			    }
-			});
-			
-		});		
-		
+			});		
+		});			
 	});
 </script>
 </head>
